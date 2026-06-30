@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+IDEAS FOR MOVIE NIGHT
+
+- Individual ranking per email account (my top 10 might be different than Todd's top ten). 1-5 stars maybe with .25 increments?
+
+- Ability to collaborate using a shared watchlist, like what you have now where its a pool of movies.
+
+- Ability to write reviews in said individual ranking list about the movie (stupid quote, timestamp of dumb slo mo thing, or just "this was meh".)
+
+- I’d like to be able to make multiple lists too. So I can have here’s my top 10 all time movies, but also here’s a bunch of so bad they’re good movies, or here’s the list of everything we’ve watched as a group.
