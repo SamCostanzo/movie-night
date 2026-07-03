@@ -6,12 +6,11 @@
 } */
 
 @theme {
-  --color-background: #fff;
+  --color-background: #14171c;
   --color-surface: #1a1a24;
   --color-brand: #e63946;
   --color-text: #f5f5f5;
   --color-muted: #9ca3af;
-
   --font-display: "Playfair Display", serif;
   --font-body: "Inter", sans-serif;
 }

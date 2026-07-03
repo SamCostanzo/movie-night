@@ -29,17 +29,20 @@ export const metadata: Metadata = {
   description: "An app for Sam's friends",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="bg-background text-text font-body">
         <header className="border-b border-surface">
           <Container>
             <div className="flex items-center justify-between py-4">
-              <span className="font-display text-2xl text-brand">Movie Night</span>
+              <a href="/" className="font-display text-2xl text-brand">
+                Movie Night
+              </a>
               <nav className="flex gap-4 text-muted">
-                <a href="/">Home</a>
-                <a href="/movies">Movies</a>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
               </nav>
             </div>
           </Container>
@@ -56,15 +59,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-//     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-//       <body className="min-h-full flex flex-col">{children}</body>
-//     </html>
-//   );
-// }
