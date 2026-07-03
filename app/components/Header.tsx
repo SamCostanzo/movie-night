@@ -1,7 +1,14 @@
+'use client';
+
 import Container from "./Container";
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 
 export default function Header(){
+
+    const pathname = usePathname();
+    
     return (
         <header className="bg-ink border-marigold border-b-6">
           <Container>
@@ -10,9 +17,10 @@ export default function Header(){
                 Movie Night
               </h1>
               <nav className="flex gap-4 text-text-invert uppercase cursor-pointer">
-                <a href="/" className="hover:text-marigold transition-colors duration-300">Browse</a>
-                <a href="/Watchlist/" className="hover:text-marigold transition-colors duration-300">Watchlist</a>
-                <a href="/watched/" className="hover:text-marigold transition-colors duration-300">Watched</a>
+                <Link href="/" className={pathname === "/" ? "text-marigold" : "hover:text-marigold transition-colors duration-300"}>Browse</Link>
+                <Link href="/watchlist" className={pathname === "/watchlist" ? "text-marigold" : "hover:text-marigold transition-colors duration-300"}>Watchlist</Link>
+                <Link href="/watched" className={pathname === "/watched" ? "text-marigold" : "hover:text-marigold transition-colors duration-300"}>Watched</Link>
+
               </nav>
             </div>
           </Container>
