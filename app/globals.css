@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
-/* :root {
-  --background: #d63434;
-  --foreground: #171717;
-} */
-
 @theme {
-  --color-background: #14171c;
-  --color-surface: #1a1a24;
-  --color-brand: #e63946;
-  --color-text: #f5f5f5;
-  --color-muted: #9ca3af;
-  --font-display: "Playfair Display", serif;
-  --font-body: "Inter", sans-serif;
+  /* Colors */
+  --color-background: #f4ecd8;   /* warm cream/parchment page bg */
+  --color-ink: #1a1410;          /* espresso brown — header/footer, card frames */
+  --color-surface: #1a1410;      /* card backgrounds (same espresso for now) */
+  --color-brand: #b5502e;        /* burnt orange/terracotta — buttons, accents */
+  --color-marigold: #e8a13a;     /* golden yellow — ratings, flourishes, highlights */
+  --color-text: #1a1410;         /* main text on the cream bg */
+  --color-text-invert: #f4ecd8;  /* text on dark surfaces (cards, header) */
+  --color-muted: #8a7d63;        /* desaturated tan — secondary text on cream */
+  --color-muted-invert: #c9bda3; /* muted text on dark surfaces */
+
+  /* Fonts */
+  --font-display: "Bitter", serif;
+  --font-body: "Space Grotesk", sans-serif;
 }

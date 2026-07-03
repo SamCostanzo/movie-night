@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Playfair_Display, Inter } from "next/font/google";
-import Container from "./components/Container";
+import { Bitter, Space_Grotesk } from "next/font/google";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-const playfair = Playfair_Display({
+const bitter = Bitter({
   subsets: ["latin"],
+  weight: ["400", "700", "900"],   // regular, bold, black
   variable: "--font-display",
 });
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
+  weight: ["400", "700"],   // regular, bold, black
   variable: "--font-body",
 });
 
@@ -31,30 +34,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${bitter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-background text-text font-body">
-        <header className="border-b border-surface">
-          <Container>
-            <div className="flex items-center justify-between py-4">
-              <a href="/" className="font-display text-2xl text-brand">
-                Movie Night
-              </a>
-              <nav className="flex gap-4 text-muted">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </nav>
-            </div>
-          </Container>
-        </header>
-
+        <Header />
         <main>{children}</main>
-
-        <footer className="border-t border-surface mt-12">
-          <Container>
-            <p className="py-6 text-muted text-sm">Movie data from TMDB. Built by Sam.</p>
-          </Container>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
