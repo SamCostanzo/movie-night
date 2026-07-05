@@ -8,7 +8,6 @@ export default async function Home() {
 
   return (
     <Container>
-      <h1 className="mb-4 font-display">My Movies</h1>
       <MovieList movies={movies} />
     </Container>
   );
