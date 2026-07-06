@@ -6,3 +6,9 @@ export type Movie = {
   poster_path: string;
   vote_average: number;
 };
+
+export type Video = {
+  site: string;
+  type: string;
+  key: string;
+};

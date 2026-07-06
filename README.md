@@ -35,7 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-IDEAS FOR MOVIE NIGHT
+IDEAS FOR MOVIE NIGHT FROM FRIENDS
 
 - Individual ranking per email account (my top 10 might be different than Todd's top ten). 1-5 stars maybe with .25 increments?
 

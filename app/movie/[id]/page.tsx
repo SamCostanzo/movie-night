@@ -1,30 +1,27 @@
 import Container from "@/app/components/Container";
+import { Video } from '@/app/types';
 
 export default async function MoviePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  // console.log("ID from params:", id);
 
   const token = process.env.TMDB_TOKEN;
   const res = await fetch(`https://api.themoviedb.org/3/movie/${id}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   const movie = await res.json();
-  // console.log("Movie data:", movie);
 
-  // Second fetch — the videos
   const videoRes = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   const videoData = await videoRes.json();
 
-  // Find a YouTube trailer among the results
-  const trailer = videoData.results.find((video) => video.site === "YouTube" && video.type === "Trailer");
+  const trailer = videoData.results.find((video: Video) => video.site === "YouTube" && video.type === "Trailer");
 
   return (
     <Container>
       <div className="py-24 flex flex-col md:flex-row gap-8">
         {/* LEFT: Poster */}
-        <div className="md:w-1/3 flex-shrink-0">
+        <div className="md:w-1/3 shrink-0">
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.title} poster`} className="w-full rounded-lg border-2 border-ink" />
         </div>
 
