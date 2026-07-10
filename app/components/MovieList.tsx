@@ -45,7 +45,7 @@ export default function MovieList({ movies }: { movies: Movie[] }) {
       ) : hasSearched && moviesToShow.length === 0 ? (
         <p className="text-center text-muted font-body">No movies found. Try another title.</p>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {moviesToShow.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}

@@ -4,7 +4,7 @@ import { Movie } from "../types";
 export default function MovieCard({ movie }: { movie: Movie }) {
   return (
     <Link href={`/movie/${movie.id}`}>
-      <article key={movie.id} className="bg-ink rounded-lg overflow-hidden group">
+      <article key={movie.id} className="h-full bg-ink rounded-lg overflow-hidden group">
         <div className="relative overflow-hidden">
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.title} poster`} className="w-full group-hover:scale-103 transition-transform duration-300" />
           <span className="absolute top-2 right-2 bg-marigold text-ink text-xs font-bold px-2 py-0.5 rounded-full">{movie.vote_average.toFixed(1)}</span>
