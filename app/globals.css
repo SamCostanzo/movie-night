@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-background: #f4ecd8;   /* warm cream/parchment page bg */
-  --color-ink: #1a1410;          /* espresso brown — header/footer, card frames */
-  --color-surface: #1a1410;      /* card backgrounds (same espresso for now) */
-  --color-brand: #b5502e;        /* burnt orange/terracotta — buttons, accents */
-  --color-marigold: #e8a13a;     /* golden yellow — ratings, flourishes, highlights */
-  --color-text: #1a1410;         /* main text on the cream bg */
-  --color-text-invert: #f4ecd8;  /* text on dark surfaces (cards, header) */
-  --color-muted: #8a7d63;        /* desaturated tan — secondary text on cream */
-  --color-muted-invert: #c9bda3; /* muted text on dark surfaces */
+  /* Base surfaces */
+  --color-background: #f2e8d5; /* warm cream/kraft paper */
+  --color-surface: #f9f3e6; /* lighter cream — cards, search bar */
+  --color-ink: #1f3a3a; /* deep forest teal — chrome, borders, text */
 
-  /* Fonts */
+  /* Accent palette (groovy/earthy) */
+  --color-brand: #e2603f; /* burnt orange — primary buttons, accents */
+  --color-marigold: #f0a830; /* golden marigold — highlights, ratings */
+  --color-teal: #3a7d6f; /* mid teal — secondary accents */
+  --color-rose: #c94f7c; /* dusty rose — tertiary accent */
+
+  /* Text */
+  --color-text: #1f3a3a; /* teal-ink for main text on cream */
+  --color-text-invert: #f2e8d5; /* cream text on dark/teal surfaces */
+  --color-muted: #a08d6f; /* warm tan — secondary text on cream */
+  --color-muted-invert: #d4a574; /* warm tan — muted text on teal chrome */
+
+  /* Fonts — keeping current for now, we swap these next step */
   --font-display: "Bitter", serif;
   --font-body: "Space Grotesk", sans-serif;
 }
