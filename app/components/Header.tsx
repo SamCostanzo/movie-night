@@ -17,7 +17,8 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-ink border-marigold border-b-6">
+    <>
+    <header className="bg-ink">
       <div className="flex items-center justify-between max-w-6xl mx-auto py-4 px-4">
         <h1 className="font-display text-2xl text-white">Movie Night</h1>
         <nav className="flex gap-4 text-text-invert uppercase cursor-pointer">
@@ -50,5 +51,7 @@ export default function Header() {
         </nav>
       </div>
     </header>
+    <div className="rainbow-bar h-1.5" />
+    </>
   );
 }

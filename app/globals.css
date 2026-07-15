@@ -19,6 +19,13 @@
   --color-muted-invert: #d4a574; /* warm tan — muted text on teal chrome */
 
   /* Fonts — keeping current for now, we swap these next step */
-  --font-display: "Bitter", serif;
+  --font-display: "Righteous", sans-serif;
   --font-body: "Space Grotesk", sans-serif;
 }
+
+@layer components {
+  .rainbow-bar {
+      background: repeating-linear-gradient(90deg, var(--color-brand) 0 24px, var(--color-marigold) 24px 48px, var(--color-teal) 48px 72px, var(--color-rose) 72px 96px);
+  }
+}
+

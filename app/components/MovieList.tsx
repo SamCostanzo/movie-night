@@ -37,7 +37,7 @@ export default function MovieList({ movies }: { movies: Movie[] }) {
   const moviesToShow = hasSearched ? results : movies;
 
   return (
-    <div className="py-16">
+    <div className="py-8">
       <Search query={query} setQuery={setQuery} onSearch={handleSearch} onClear={clearSearch} />
 
       {loading ? (

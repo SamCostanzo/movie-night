@@ -1,15 +1,24 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Bitter, Space_Grotesk } from "next/font/google";
+import { Righteous, Space_Grotesk } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const bitter = Bitter({
+
+
+// const fredoka = Fredoka({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700"],  
+//   variable: "--font-display",
+// });
+
+const righteous = Righteous({
   subsets: ["latin"],
-  weight: ["400", "700", "900"],   // regular, bold, black
+  weight: "400",         
   variable: "--font-display",
 });
+
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -34,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${bitter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${righteous.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-background text-text font-body">
         <Header />
         <main>{children}</main>
