@@ -59,3 +59,50 @@ export async function addMovieToList(formData: FormData) {
 
   revalidatePath(`/movie/${movieId}`);
 }
+
+export async function renameList(formData: FormData) {
+  const session = await auth.api.getSession({ headers: await headers() });
+  if (!session) {
+    throw new Error("Not logged in");
+  }
+
+  const listId = formData.get("listId") as string;
+  const name = formData.get("name") as string;
+
+  if (!listId || !name?.trim()) return;
+
+  // Verify ownership
+  const list = await prisma.list.findUnique({ where: { id: listId } });
+  if (!list || list.ownerId !== session.user.id) {
+    throw new Error("Not your list");
+  }
+
+  await prisma.list.update({
+    where: { id: listId },
+    data: { name: name.trim() },
+  });
+
+  revalidatePath("/lists");
+}
+
+export async function deleteList(formData: FormData) {
+  const session = await auth.api.getSession({ headers: await headers() });
+  if (!session) {
+    throw new Error("Not logged in");
+  }
+
+  const listId = formData.get("listId") as string;
+  if (!listId) return;
+
+  // Verify ownership
+  const list = await prisma.list.findUnique({ where: { id: listId } });
+  if (!list || list.ownerId !== session.user.id) {
+    throw new Error("Not your list");
+  }
+
+  await prisma.list.delete({
+    where: { id: listId },
+  });
+
+  revalidatePath("/lists");
+}

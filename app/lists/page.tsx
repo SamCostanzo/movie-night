@@ -2,8 +2,11 @@ import { auth } from "@/app/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createList } from "@/app/lib/actions";
+import { renameList } from "@/app/lib/actions";
+import { deleteList } from "@/app/lib/actions";
 import { prisma } from "@/app/lib/prisma";
 import Container from "../components/Container";
+import ListCard from "@/app/components/ListCard";
 import Link from "next/link";
 
 export default async function ListsPage() {
@@ -16,31 +19,42 @@ export default async function ListsPage() {
   const lists = await prisma.list.findMany({
     where: { ownerId: session.user.id },
     orderBy: { createdAt: "desc" },
+    include: {
+      _count: {
+        select: { items: true },
+      },
+    },
   });
 
   return (
     <Container>
-      <h1 className="font-display text-3xl mb-6 text-center">My Lists</h1>
-      <p className="text-center">Welcome, {session.user.name}. Your lists will appear here.</p>
-      <form action={createList} className="flex flex-col w-full max-w-md mx-auto gap-2 mb-8">
-        <input name="name" placeholder="New list name" required className="border-2 border-ink rounded px-3 py-2" />
-        <button type="submit" className="bg-brand text-background rounded-full px-4 py-2 max-w-fit cursor-pointer uppercase">
-          Create
-        </button>
-      </form>
-      <div className="flex flex-col gap-3">
-        {lists.length === 0 ? (
-          <p className="text-muted">No lists yet. Create one above!</p>
-        ) : (
-          lists.map((list) => (
-            <Link key={list.id} href={`/lists/${list.id}`}>
-              <div key={list.id} className="border-2 border-ink rounded p-4">
-                <h2 className="font-display text-xl">{list.name}</h2>
-              </div>
-            </Link>
-          ))
-        )}
-      </div>
+        {/* Flourish header */}
+        <div className="text-center my-6">
+          <p className="text-brand uppercase tracking-[3px] text-sm mb-2">✦ Your Collection ✦</p>
+          <h1 className="font-display text-4xl text-ink">My Lists</h1>
+        </div>
+
+        {/* Create form — styled as a pill, like your search bar */}
+        <form action={createList} className="flex items-center gap-2 max-w-md mx-auto bg-surface border-2 border-ink rounded-full py-2 pl-5 pr-2 mt-14 mb-8">
+          <input
+            name="name"
+            placeholder="Name a new list..."
+            required
+            className="flex-1 bg-transparent outline-none text-ink placeholder:text-muted font-body"
+          />
+          <button type="submit" className="bg-brand text-background rounded-full px-5 py-2 uppercase text-xs tracking-wider cursor-pointer">
+            Create
+          </button>
+        </form>
+        <div className="flex flex-col gap-3">
+          {lists.length === 0 ? (
+            <p className="text-muted">No lists yet. Create one above!</p>
+          ) : (
+            lists.map((list) => (
+              <ListCard key={list.id} list={list} />
+            ))
+          )}
+        </div>
     </Container>
   );
 }
