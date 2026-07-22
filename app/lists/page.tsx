@@ -36,7 +36,7 @@ export default async function ListsPage() {
 
       {/* Create form — styled as a pill, like your search bar */}
       <form action={createList} className="flex items-center gap-2 max-w-md mx-auto bg-white border-2 border-ink rounded-full py-2 pl-5 pr-2 mt-14 mb-8">
-        <input id="create-list" name="name" placeholder="Name a new list..." required className="flex-1 bg-transparent outline-none text-ink placeholder:text-muted font-body" />
+        <input id="create-list" name="name" placeholder="Make a new list" required className="flex-1 bg-transparent outline-none text-ink placeholder:text-muted font-body" />
         <button type="submit" className="bg-brand text-background rounded-full px-5 py-2 uppercase text-xs tracking-wider cursor-pointer">
           Create
         </button>

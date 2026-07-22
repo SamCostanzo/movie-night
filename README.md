@@ -35,12 +35,53 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-IDEAS FOR MOVIE NIGHT FROM FRIENDS
+LIVE CHECKLIST
 
-- Individual ranking per email account (my top 10 might be different than Todd's top ten). 1-5 stars maybe with .25 increments?
+1. Delete Watchlist/Watched nav items (5 min)
+2. Rating pill fix (10 min, if you know the issue)
+3. MovieCard in single-list view (20 min — reuse existing component)
+4. Style the single-list view around it (30 min)
+5. Style /login and /register (30 min — you have the vocabulary)
+6. DEPLOY!!!
 
-- Ability to collaborate using a shared watchlist, like what you have now where its a pool of movies.
+ADD AFTER LIVE
 
-- Ability to write reviews in said individual ranking list about the movie (stupid quote, timestamp of dumb slo mo thing, or just "this was meh".)
+- Shared "friends" watchlist
 
-- I’d like to be able to make multiple lists too. So I can have here’s my top 10 all time movies, but also here’s a bunch of so bad they’re good movies, or here’s the list of everything we’ve watched as a group.
+- Individual ranking per account (my top 10 might be different than Todd's top ten). 1-5 stars maybe with .25 increments? Ability to write reviews in said individual ranking list about the movie (stupid quote, timestamp of dumb slo mo thing, or just "this was meh".)
+
+- More filters on homepage view. By actor, director, year, genre etc
+
+- Create "Watched" page
+
+- Is it possible to refactor the search input and the create list input into one component?
+
+- Add more details to single view. Cast, director etc
+
+- When adding a movie to one of your lists, show something to confirm that it worked.
+
+- Add some sort of breadcrumb nav
+
+- If I search, click on a movie, and then click back, make it go back to what I was searching as much as possible.
+
+- View a profile page, be able to edit info. Avatars?
+
+- A "directors" type to view all movies by a director (Letterboxd)
+
+- Polish with some animations and loading effects
+
+- Build a profile view, be able to view others profiles and see their custom lists.
+
+- Option 3 from Claude, the whole social profile list owner and list collaborator design piece (saved in Claudes memory for later)
+
+- Polish/expand the footer
+
+- Itterate on colors a bit more
+
+- Itterate on fonts a bit more
+
+- Make the single movie slug the slug title + the year (Letterboxd)
+
+- Maybe show the director on the movie card in the movie list? (Letterboxd)
+
+- Revisit the apps name! Generate a logo?
