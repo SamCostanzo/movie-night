@@ -7,6 +7,7 @@ export default function Search({ query, setQuery, onSearch, onClear }: { query: 
         </button>
       )}
       <input
+        id="movie-search"
         value={query}
         onKeyDown={(e) => e.key === "Enter" && onSearch()}
         onChange={(e) => setQuery(e.target.value)}
